@@ -1,6 +1,8 @@
 package wallet
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestWallet(t *testing.T) {
 
@@ -9,6 +11,7 @@ func TestWallet(t *testing.T) {
 	wallet.Deposit(10)
 
 	got := wallet.Balance()
+
 	want := 10
 
 	if got != want {
