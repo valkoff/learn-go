@@ -6,5 +6,5 @@ type Triangle struct {
 }
 
 func (r Triangle) Area() float64 {
-	return 0
+	return r.Base * r.Height * 0.5
 }
