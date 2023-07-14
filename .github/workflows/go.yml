@@ -21,13 +21,10 @@ jobs:
       with:
         go-version: '1.20'
 
-    - name: Build
-      run: go build -v ./...
-
     - name: Test
       run: go test -v ./...
 
     - name: Errcheck
-      run: |
-        go install github.com/kisielk/errcheck
-        errcheck ./...
+      # You may pin to the exact commit or the version.
+      # uses: stanleynguyen/action-errcheck@c3233d1b20fcaa9c48c62a0cf0d5c0bd10671a61
+      uses: stanleynguyen/action-errcheck@v1
