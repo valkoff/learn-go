@@ -1,6 +1,7 @@
 package arrays
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 )
@@ -31,4 +32,26 @@ func BenchmarkSum(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Sum(numbers)
 	}
+}
+
+func BenchmarkSumAll(b *testing.B) {
+	first := []int{1, 2, 3, 4, 5}
+	second := []int{1, 2, 3, 4, 5}
+	third := []int{1, 2, 3, 4, 5}
+
+	for i := 0; i < b.N; i++ {
+		SumAll(first, second, third)
+	}
+}
+
+func ExampleSum() {
+	sum := Sum([]int{1, 2, 3})
+	fmt.Println(sum)
+	// Output: 6
+}
+
+func ExampleSumAll() {
+	sum := SumAll([]int{1, 2, 3}, []int{2, 2, 5})
+	fmt.Println(sum)
+	// Output: [6 9]
 }
