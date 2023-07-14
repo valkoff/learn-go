@@ -1,4 +1,4 @@
-package pointersanderrors
+package wallet
 
 type Wallet struct{}
 
