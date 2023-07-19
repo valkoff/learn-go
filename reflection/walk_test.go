@@ -68,7 +68,15 @@ func TestWalk(t *testing.T) {
 			"slices",
 			[]Profile{
 				{1991, "Rome"},
-				{2018, "Milan"},
+				{2023, "Milan"},
+			},
+			[]string{"Rome", "Milan"},
+		},
+		{
+			"arrays",
+			[2]Profile{
+				{1991, "Rome"},
+				{2023, "Milan"},
 			},
 			[]string{"Rome", "Milan"},
 		},
