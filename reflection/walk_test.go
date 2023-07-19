@@ -5,6 +5,16 @@ import (
 	"testing"
 )
 
+type Person struct {
+	Name    string
+	Profile Profile
+}
+
+type Profile struct {
+	Year int
+	City string
+}
+
 func TestWalk(t *testing.T) {
 
 	cases := []struct {
@@ -34,6 +44,17 @@ func TestWalk(t *testing.T) {
 				Year int
 			}{"Valerio", 1991},
 			[]string{"Valerio"},
+		},
+		{
+			"nested fields",
+			Person{
+				"Valerio",
+				Profile{
+					1991,
+					"Rome",
+				},
+			},
+			[]string{"Valerio", "Rome"},
 		},
 	}
 
